@@ -1,0 +1,137 @@
+[{
+    "applicationid": "AP10000",
+    "title": "Home",
+    "icon": "sap-icon://home",
+    "expanded": false,
+    "key": "ProjectStatisticalReport",
+    "componentName": "vaspp.ProjectStatisticalReport",
+    "permittedRoles": ["everyone"],
+    "permissions": {
+        "create": false,
+        "read": true,
+        "update": false,
+        "delete": false
+    },
+    "items": []
+},
+{
+    "applicationid": "APP10001",
+    "title": "Manage Projects",
+    "icon": "sap-icon://add-activity-2",
+    "expanded": false,
+    "key": "ManageProjects",
+    "componentName": "VASPP.Manage_Project",
+    "permittedRoles": ["manager", "technici"],
+    "permissions": {
+        "create": false,
+        "read": true,
+        "update": false,
+        "delete": false
+    },
+    "items": []
+},
+{
+    "applicationid": "APP100041",
+    "title": "Users Management",
+    "icon": "sap-icon://user-settings",
+    "expanded": false,
+    "key": "UsersManagement",
+    "componentName": "inhance.userManagementSecurity",
+    "permittedRoles": ["superadmin", "administrator"],
+    "permissions": {
+        "create": false,
+        "read": true,
+        "update": false,
+        "delete": false
+    },
+    "items": [
+    
+    {
+        "applicationid": "APP10003",
+        "title": "Manage Employee",
+        "icon": "sap-icon://add-employee",
+        "expanded": false,
+        "key": "Manage Employee",
+        "componentName": "VASPP.employee",
+        "permittedRoles": ["everyone"],
+        "permissions": {
+            "create": false,
+            "read": true,
+            "update": false,
+            "delete": false
+        }
+    } ,{
+        "applicationid": "APP10002",
+        "title": "Manage Customer",
+        "icon": "sap-icon://customer",
+        "expanded": false,
+        "key": "ManageCustomers",
+        "componentName": "vaspp.Customer",
+        "permittedRoles": ["Employee"],
+        "permissions": {
+            "create": false,
+            "read": true,
+            "update": false,
+            "delete": false
+        }
+    }, {
+        "applicationapplicationid": "APP10004",
+        "title": "Manage Vendor",
+        "icon": "sap-icon://supplier",
+        "expanded": false,
+        "key": "ManageVendors",
+        "componentName": "vaspp.Vendor",
+        "permittedRoles": ["manager", "technici"],
+        "permissions": {
+            "create": false,
+            "read": true,
+            "update": false,
+            "delete": false
+        }
+    }]
+},
+
+ 
+{
+    "applicationapplicationid": "",
+    "title": "Leaves Management",
+    "icon": "sap-icon://create-leave-request",
+    "expanded": false,
+    "key": "LeavesManagement",
+    "componentName": "",
+    "permittedRoles": ["everyone"],
+    "permissions": {
+        "create": false,
+        "read": true,
+        "update": false,
+        "delete": false
+    },
+    "items": [{
+        "applicationid": "APP100025",
+        "title": "Approve Leave Requests",
+        "expanded": false,
+        "key": "ApproveLeaveRequests",
+        "componentName": "vaspp.Leave",
+        "permittedRoles": ["everyone"],
+        "permissions": {
+            "create": false,
+            "read": true,
+            "update": false,
+            "delete": false
+        }
+    }, {
+        "applicationid": "APP100087",
+        "title": "Leave Entry ",
+        "expanded": false,
+        "key": "LeaveEntry",
+        "componentName": "VASPP.manageleaves",
+        "permittedRoles": ["everyone"],
+        "permissions": {
+            "create": false,
+            "read": true,
+            "update": false,
+            "delete": false
+        }
+    }  ]
+}
+]

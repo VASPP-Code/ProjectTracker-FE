@@ -1,0 +1,122 @@
+<mvc:View controllerName="VASPP.manageleaves.controller.ApplyLeaves" 
+xmlns:html="http://www.w3.org/1999/xhtml" 
+xmlns:upload="sap.m.upload"
+displayBlock="true"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns="sap.m" 
+xmlns:l="sap.ui.layout" 
+xmlns:f="sap.ui.layout.form" 
+xmlns:u="sap.ui.unified" 
+xmlns:shellfooter="sap.ushell.ui.footerbar"
+xmlns:core="sap.ui.core">
+	<Page id="applyleave" title="Leave Entry" showNavButton="false">
+		<content>
+			<l:Grid id="LRS4_FLX_TOP" width="auto" defaultIndent="L4 M3" defaultSpan="L4 M6 S12" class="s4leaveTypeSelectorFlx">
+				<l:content>
+					<Select id="leaveTypeSelectId" change="onLeaveTypeSelectionChange" required="true" width="100%" >
+						<core:Item id="_IDGenItem1" key="Select" text="Select" />
+						<core:Item id="sick" key="Sick Paid Leave" text="Sick Leave"/>
+						<core:Item id="emergency" key="Emergency Leave" text="Emergency Leave"/>
+						<core:Item id="vacation" key="Vacation Leave" text="Vacation Leave"/>
+						<!-- <core:Item id="Planned" key="Planned Leave" text="Planned Leave"/> -->
+					</Select>
+				</l:content>
+			</l:Grid>
+			<l:Grid id="_IDGenGrid1" defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<f:Form id="LRS4_FRM_MAIN">
+						<f:layout>
+							<!--<f:ResponsiveGridLayout labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1"/>-->
+							<f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout1" labelSpanL="3" labelSpanM="3"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="LRS4_FRM_CNT_CALENDAR">
+								<f:layoutData>
+									<l:ResponsiveFlowLayoutData id="_IDGenResponsiveFlowLayoutData1" weight="6" linebreak="true"></l:ResponsiveFlowLayoutData>
+								</f:layoutData>
+								<f:formElements>
+									<f:FormElement id="LRS4_FELEM_CALENDAR">
+										<f:layoutData>
+											<l:ResponsiveFlowLayoutData id="_IDGenResponsiveFlowLayoutData2"></l:ResponsiveFlowLayoutData>
+										</f:layoutData>
+										<f:fields>
+											<u:Calendar id="calSelectLeaveDates" showWeekNumbers="false" class="s4Calendar" select="handleDateSelection" intervalSelection="false"
+												singleSelection="false" nonWorkingDays="0,6"></u:Calendar>
+											<u:CalendarLegend id="LRS4_LEGEND" class="s4LEGEND">
+												<u:layoutData>
+													<l:ResponsiveFlowLayoutData id="_IDGenResponsiveFlowLayoutData3" linebreak="true"></l:ResponsiveFlowLayoutData>
+												</u:layoutData>
+											</u:CalendarLegend>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer id="LRS4_FRM_CNT_BALANCES">
+								<!-- Note field -->
+								<f:layoutData>
+									<l:ResponsiveFlowLayoutData id="_IDGenResponsiveFlowLayoutData4" linebreak="{= ${device>/system/phone}}" weight="3"></l:ResponsiveFlowLayoutData>
+								</f:layoutData>
+								<f:formElements>
+									
+									<f:FormElement id="LRS4_FELEM_NOTE">
+										<f:layoutData>
+											<l:ResponsiveFlowLayoutData id="_IDGenResponsiveFlowLayoutData5" linebreak="true"></l:ResponsiveFlowLayoutData>
+										</f:layoutData>
+										<f:fields>
+											<l:Grid id="LRS4_NOTE" width="100%" defaultSpan="L12 M12 S12">
+												<l:content>
+													<Label id="_IDGenLabel1" text="Reason" required="true">
+														<layoutData>
+															<l:ResponsiveFlowLayoutData id="_IDGenResponsiveFlowLayoutData6" linebreak="true"></l:ResponsiveFlowLayoutData>
+														</layoutData>
+													</Label>
+													<TextArea id="reasonId" class="s4Notes " width="100%" rows="2" wrapping="None" value="{/reason}">
+														<layoutData>
+															<l:ResponsiveFlowLayoutData id="_IDGenResponsiveFlowLayoutData7" linebreak="true"></l:ResponsiveFlowLayoutData>
+														</layoutData>
+													</TextArea>
+													<CheckBox id="halfDayCheckBoxId" text="{i18n>LE_HALF_DAY_LEAVE}" select="handleCheckBoxSelection">
+														<layoutData>
+															<l:ResponsiveFlowLayoutData id="_IDGenResponsiveFlowLayoutData8" linebreak="true"></l:ResponsiveFlowLayoutData>
+														</layoutData>
+													</CheckBox>
+													<!-- <UploadCollection id="upldColAttach" change="collectAttachment" mode="SingleSelectMaster" maximumFilenameLength="55" maximumFileSize="10"
+														multiple="false" sameFilenameAllowed="true" instantUpload="false" showSeparators="All" fileDeleted="onFileDeleted"
+														filenameLengthExceed="onFilenameLengthExceed" fileSizeExceed="onFileSizeExceed" typeMissmatch="onTypeMissmatch"
+														uploadComplete="onUploadComplete" beforeUploadStarts="onBeforeUploadStarts" uploadButtonInvisible="false">
+														<layoutData>
+															<l:ResponsiveFlowLayoutData id="_IDGenResponsiveFlowLayoutData9" linebreak="true"></l:ResponsiveFlowLayoutData>
+														</layoutData>
+													</UploadCollection> -->
+														<upload:UploadSet id="upldColAttach" items="{path:'attachmentModel>/', templateShareable: false}" afterItemAdded="onChange" beforeItemRemoved="onFileDeleted" mode="None" noDataDescription="{i18n>no files Description}">
+                                    <upload:items>
+									<upload:UploadSetItem id="_IDGenUploadSetItem1" fileName="{attachmentModel>FileName}" url="{attachmentModel>FileContent}"/>
+                                </upload:items>
+								</upload:UploadSet>
+														
+												</l:content>
+											</l:Grid>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							
+						</f:formContainers>
+						<f:layout>
+							<f:ResponsiveLayout id="LRS4_FRM_MAIN_LAYOUT"></f:ResponsiveLayout>
+						</f:layout>
+					</f:Form>
+				</l:content>
+			</l:Grid>
+		</content>
+		<footer>
+			<Bar id="_IDGenBar1">
+				<contentRight>
+					<Button id="_IDGenButton1" text="Apply Leave" press="applyLeave" type="Emphasized" tooltip="{i18nModel>LE_APPLY}"/>
+					<Button id="_IDGenButton2" text="Balance Leave" press="handlebalancePress" type="Emphasized" tooltip="{i18nModel>LE_BAL_LEAVES}"/>
+					<Button id="_IDGenButton3" text="Leave History" press="handleHistoryPress" type="Emphasized" tooltip="{i18nModel>LE_HISTORY}"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

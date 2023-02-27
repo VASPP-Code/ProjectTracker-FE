@@ -1,0 +1,53 @@
+{
+		"leaves": [{
+			"carry_forward": "5",
+			"current_year_leaves": "28",
+			"taken_all_leaves": "48",
+			"taken_leaves": "3",
+			"taken_this_year_unpaid_leaves": 0,
+			"taken_this_year_vacation_leaves": 18,
+			"taken_unpaid_leaves": 0,
+			"taken_vacation_leaves": 14,
+			"total_leaves": "22",
+			"year": "2016"
+			},
+			{
+			"carry_forward": "0",
+			"current_year_leaves": "30",
+			"taken_all_leaves": "48",
+			"taken_leaves": "3",
+			"taken_this_year_unpaid_leaves": 0,
+			"taken_this_year_vacation_leaves": 24,
+			"taken_unpaid_leaves": 0,
+			"taken_vacation_leaves": 24,
+			"total_leaves": "30",
+			"year": "2017"
+			},
+
+			{
+			"carry_forward": "6",
+			"current_year_leaves": "30",
+			"taken_all_leaves": "48",
+			"taken_leaves": "4",
+			"taken_this_year_unpaid_leaves": 0,
+			"taken_this_year_vacation_leaves": 13,
+			"taken_unpaid_leaves": 0,
+			"taken_vacation_leaves": 13,
+			"total_leaves": "36",
+			"year": "2018"
+			},
+
+			{
+			"carry_forward": "23",
+			"current_year_leaves": "30",
+			"taken_all_leaves": "48",
+			"taken_leaves": "2",
+			"taken_this_year_unpaid_leaves": 0,
+			"taken_this_year_vacation_leaves": 2,
+			"taken_unpaid_leaves": 0,
+			"taken_vacation_leaves": 2,
+			"total_leaves": "53",
+			"year": "2019"
+			}]
+
+}

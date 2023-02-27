@@ -1,0 +1,215 @@
+{
+    "EmployeeCollection":[
+        {
+    "orgid": "ORG10001",
+    "id": "ID0001",
+    "Name": "Jorg",
+    "email": "abc@gmail.com",
+    "contact": 8247526016,
+    "address": "Dallas Street",
+    "city": "Dallas",
+    "country": "USA",
+    "region1": "North America",
+    "region2": "Americas",
+    "zipCode": 75001,
+    "gender" : "Male",
+    "designation" :"Developer",
+	"department" : "IT",
+	"dob" : "7/6/1990",
+    "assignedApps": [{
+        "appId": "APP0001",
+        "appName": "Project Management",
+        "create": false,
+        "read": true,
+        "update": false,
+        "delete": false
+    }, {
+        "appId": "APP0002",
+        "appName": "Customer Management",
+        "create": false,
+        "read": true,
+        "update": false,
+        "delete": false
+    }],
+    "createDate": "24-08-2021",
+	"editDate": "2-12-2021",
+	"deleteDate": "28-7-2022",
+    "description": "User can manage  and give the access the user for customer management",
+    "documents": [{
+        "FileName":"Aadhar.pdf",
+        "FileContent": "https://www.africau.edu/images/default/sample.pdf"
+    },
+    {
+        "FileName":"Pan.pdf",
+        "FileContent": "https://www.africau.edu/images/default/sample.pdf"
+    },{
+        "FileName":"Marksheets.pdf",
+        "FileContent": "https://www.africau.edu/images/default/sample.pdf"
+    },{
+        "FileName":"Experience Letter.pdf",
+        "FileContent": "https://www.africau.edu/images/default/sample.pdf"
+    }],
+    "noofproject":1,	      
+    "doj":"08/3/2011",
+    "teamlead":"Kavya",
+    "emcontactno":"1234567894",
+    "emcontactname":"Anu",
+    "probationperiod":"N/A",
+    "bank":"SBI",
+    "ifsc":"1234567894",
+    "nomineeaddress":"Maharashtra ",
+    "nomineeshare":"100%",
+    "nomineedob":"08/3/2011",
+    "nomineerelationship":"Father",
+    "bankno":"SBI1234567894",
+    "uan":"234567894",
+    "pfnominee":"Anu",
+    "Projects":[{
+        "ProjectName":"Customer Onboarding",
+    "startdate": "01-06-2021",
+    "enddate": "31-12-2022",
+    "Description": "Customer Details",
+    "Status": "New"}]
+},
+
+
+
+{
+    "orgid": "ORG10001",
+    "id": "ID0002",
+    "Name": "Anusha Shivaraj",
+   "email": "anusha@vaspp.com",
+    "contact": 7803621354,
+    "address": "No.93 GA ROAD SHOP NO.5 KVN COMPLEX, Chennai, Tamil Nadu 600021",
+    "city": "Amritsar",
+    "country": "India",
+    "region1": "North India",
+    "designation" :"Developer",
+    "region2": "Punjab",
+    "zipCode": 560055,
+    "assignedApps": [{
+        "appId": "APP0003",
+        "appName": "Vendor Management",
+        "create": false,
+        "read": true,
+        "update": false,
+        "delete": false
+    }, {
+        "appId": "APP0004",
+        "appName": "Document Management",
+        "create": false,
+        "read": true,
+        "update": false,
+        "delete": false
+    }],
+    "createDate": "24-01-2018",
+	"editDate": "2-12-2022",
+	"deleteDate": "04-8-2022",
+    "description": "User can manage vendors and give the access the user for document management",
+    "documents": [{
+        "FileName":"Aadhar.pdf",
+        "FileContent": "https://www.africau.edu/images/default/sample.pdf"
+    },
+    {
+        "FileName":"Pan.pdf",
+        "FileContent": "https://www.africau.edu/images/default/sample.pdf"
+    }],
+    "gender" : "Female",
+	"department" : "IT",
+	"dob" : "8/2/2001",
+    "doj":"08/3/2011",
+    "teamlead":"Kavya",
+    "emcontactno":"1234567894",
+    "emcontactname":"Shivaraj",
+    "probationperiod":"N/A",
+    "bank":"SBI",
+    "ifsc":"1234567894",
+    "nomineeaddress":"Maharashtra ",
+    "nomineeshare":"100%",
+    "nomineedob":"08/3/2011",
+    "nomineerelationship":"Father",
+    "bankno":"SBI1234567894",
+    "uan":"234567894",
+    "pfnominee":"Shivaraj",
+    "noofproject":1,
+    "_id": "PRG10001",
+   
+    "Projects":[{"ProjectName":"DGI0.Program Kick Off","Description":"Data Governance Initiative", "startdate":"01-06-2021", "enddate":"31-12-2022", "Status":"New"}],
+    "Priority": "Critical"
+},
+
+
+
+
+{
+    "orgid": "ORG10001",
+    "id": "ID0003",
+    "Name": "Varun E",
+    "email": "varun@vaspp.com",
+    "contact": 1234567894,
+    "address": "Plot no 12/3, Infotech Towers, Block B, Andheri East, Mumbai, Maharashtra 400053",
+    "city": "Malappuram",
+    "country": "India",
+    "region1": "South India",
+    "region2": "Kerala",
+    "zipCode": 560056,
+    "assignedApps": [{
+        "appId": "APP0001",
+        "appName": "Project Management",
+        "create": false,
+        "read": true,
+        "update": false,
+        "delete": false
+    }, {
+        "appId": "APP0002",
+        "appName": "Customer Management",
+        "create": false,
+        "read": true,
+        "update": false,
+        "delete": false
+    }],
+    "createDate": "16-01-2017",
+	"editDate": "2-12-2019",
+	"deleteDate": "28-7-2023",
+    "description": "User can manage projects and give the access the user for customer management",
+    "documents": [{
+        "FileName":"Aadhar.pdf",
+        "FileContent": "https://www.africau.edu/images/default/sample.pdf"
+    },
+    {
+        "FileName":"Marksheets.pdf",
+        "FileContent": "https://www.africau.edu/images/default/sample.pdf"
+    }],
+    "gender" : "Male",
+	"department" :"IT",
+	"dob" : "7/6/1990",
+    "doj":"08/3/2011",
+    "teamlead":"Kavya",
+    "emcontactno":"1234567894",
+    "emcontactname":"XXX",
+    "designation" :"Tester",
+    "probationperiod":"N/A",
+    "bank":"SBI",
+    "ifsc":"1234567894",
+    "nomineeaddress":"Maharashtra ",
+    "nomineeshare":"100%",
+    "nomineedob":"08/3/2011",
+    "nomineerelationship":"Father",
+    "bankno":"SBI1234567894",
+    "uan":"234567894",
+    "pfnominee":"YYY",
+    "noofproject":1,
+    
+    "Projects":[{
+        "ProjectName":"Employee Onboarding",
+    "startdate": "01-06-2021",
+    "enddate": "31-12-2022",
+    "Description": "Employee Details",
+    "Status": "New"}]
+}
+
+]
+
+
+
+}

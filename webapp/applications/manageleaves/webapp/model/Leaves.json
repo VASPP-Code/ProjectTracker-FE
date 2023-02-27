@@ -1,0 +1,53 @@
+
+{
+		"applied_leaves": [{
+			"leave_id": "373",
+			"name": "Angelo Aleo",
+			"type": "Vacation Leave",
+			"start_date": "2019-05-02",
+			"end_date": "2019-05-02",
+			"days": "1",
+			"appliedOn":"2019-05-02",
+			"reason": "wedding",
+			"status_id": "3",
+			"tech_id": "T69751797",
+			"status":"Rejected"
+		},{
+			"leave_id": "247",
+			"name": "Angelo Aleo",
+			"type": "Vacation Leave",
+			"start_date": "2017-02-27",
+			"end_date": "2017-03-03",
+			"days": "5",
+			"appliedOn":"2018-08-06",
+			"reason": "Ferien",
+			"status_id": "1",
+			"status":"Rejected",
+			"tech_id": "T69751797"
+		}, {
+			"leave_id": "249",
+			"name": "Angelo Aleo",
+			"type": "Vacation Leave",
+			"start_date": "2017-01-02",
+			"end_date": "2017-01-05",
+			"days": "4",
+			"appliedOn":"2018-08-06",
+			"reason": "Ferien",
+			"status_id": "1",
+			"status":"Approved",
+			"tech_id": "T69751797"
+		}],
+
+		"leaves": {
+			"carry_forward": "17",
+			"current_year_leaves": "30",
+			"taken_all_leaves": "48",
+			"taken_leaves": "2",
+			"taken_this_year_unpaid_leaves": 0,
+			"taken_this_year_vacation_leaves": 2,
+			"taken_unpaid_leaves": 0,
+			"taken_vacation_leaves": 39,
+			"total_leaves": "47"
+		},
+		"no_unapproved_leaves": 0
+}

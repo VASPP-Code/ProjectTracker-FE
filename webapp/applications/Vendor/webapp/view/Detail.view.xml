@@ -1,0 +1,219 @@
+<mvc:View xmlns:table="sap.ui.table" displayBlock="true" controllerName="vaspp.Vendor.controller.Detail" height="100%"
+		xmlns="sap.uxap"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:m="sap.m"
+		xmlns:f="sap.f"
+		xmlns:form="sap.ui.layout.form"
+		
+		xmlns:upload="sap.m.upload"
+	class="viewPadding">
+
+	<ObjectPageLayout id="ObjectPageLayout"
+					 showTitleInHeaderContent="true"
+					alwaysShowContentHeader="false"
+					preserveHeaderStateOnScroll="false"
+					headerContentPinnable="true"
+					useIconTabBar="true"
+					isChildPage="true"
+					showFooter="true"
+					upperCaseAnchorBar="false"
+					>
+				<headerTitle>
+					<ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1">
+						<expandedHeading>
+							<m:Title id="_IDGenTitle1" text="{mvendor>id}" wrapping="true" class="sapUiSmallMarginEnd"/>
+						</expandedHeading>
+
+						<snappedHeading>
+							<m:FlexBox id="_IDGenFlexBox1" wrap="Wrap" fitContainer="true" alignItems="Center">
+								<m:FlexBox id="_IDGenFlexBox2" wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
+									
+									<m:Title id="_IDGenTitle2" text="{mvendor>orgid}" wrapping="true" class="sapUiTinyMarginEnd"/>
+								</m:FlexBox>
+							</m:FlexBox>
+						</snappedHeading>
+
+						<navigationActions>
+							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" id="enterFullScreenBtn" tooltip="Enter Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/fullScreen} !== null }"/>
+							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" id="exitFullScreenBtn" tooltip="Exit Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/exitFullScreen} !== null }"/>
+							<m:OverflowToolbarButton id="_IDGenOverflowToolbarButton1" type="Transparent" icon="sap-icon://decline" press="handleClose"  tooltip="Close middle column" visible="{= ${/actionButtonsInfo/midColumn/closeColumn} !== null }"/>
+						</navigationActions>
+
+
+					</ObjectPageDynamicHeaderTitle>
+				</headerTitle>
+
+				<headerContent>
+					<m:FlexBox id="_IDGenFlexBox10" wrap="Wrap" fitContainer="true"
+				alignItems="Start" justifyContent="Start">
+                           <m:VBox id="_IDGenVBox10"  class="sapUiSmallMarginEnd sapUiSmallMarginBottom">
+						    <m:HBox id="_IDGenHBox11" class="sapUiTinyMarginEnd" >
+                            <m:Label id="_IDGenLa1bel1" text=""/>
+                            <m:Text id="_IDGenText01" text="{mvendor>VendorName}"/>
+                            </m:HBox>
+							<m:HBox id="_IDGenHBox1144" class="sapUiTinyMarginEnd" >
+                            <m:Label id="_IDGenLa1bel14" text=""/>
+                            <m:Text id="_IDGenText041" text="{mvendor>email}"/>
+                            </m:HBox>
+					    </m:VBox>
+					<m:VBox  wrap="Wrap" fitContainer="true"  alignItems="Start" justifyContent="Start" id="_IDGenVBox11" class="sapUiSmallMarginEnd ">	
+						<m:HBox justifyContent="End" id="_IDGenVBox5" width="740px" class="sapUiSmallMarginEnd">
+							<m:Label id="_IDGenLabel7" text="Country:" />
+							<m:Text id="_IDGenText7" text="{mvendor>country}"/>
+							</m:HBox>
+							<m:HBox justifyContent="End" id="_IDGenVBox8" width="740px" class="sapUiSmallMarginEnd" >
+							<m:Label id="_IDGenLabel67" text="City : "/>
+							<m:Text id="_IDGenText67" text="{mvendor>city}"/>
+						</m:HBox>
+							 <m:HBox justifyContent="End" id="_IDGenVBox4" width="740px" class="sapUiSmallMarginEnd" >
+							<m:Label id="_IDGenLabel8" text="Contact no. : "/>
+							<m:Text id="_IDGenText8" text="{mvendor>contact}"/>
+						</m:HBox> 
+                        </m:VBox>
+                    </m:FlexBox>
+				</headerContent>
+
+		<sections>
+		<!--  GENERAL INFORMATION OF VENDOR-->
+			<ObjectPageSection id="_IDGenObjectPageSection1" title="General Information">
+				<subSections>
+					<ObjectPageSubSection id="_IDGenObjectPageSubSection1">
+						<blocks>
+							<form:SimpleForm id="simpleFormInfoTab" title="" editable="false" class="editableForm sapUiSmallMarginTopBottom">
+							<form:content>	
+                         <m:Label id="_IDGenLabel121" text="Name "/>
+                            <m:Text id="_IDGenText211" text="{mvendor>VendorName}"/>
+							
+							<m:Label id="_IDGenLabel127" text="Telephone " />
+							<m:Text id="_IDGenText127" text="{mvendor>contact}"/>
+				                <m:Label id="_IDGenLabel1367" text="Email " />
+							<m:Text id="_IDGenText1637" text="{mvendor>email}"/>
+						<m:Label id="_IDGenLabel4137" text="Country " />
+							<m:Text id="_IDGenText1347" text="{mvendor>country}"/>
+							
+							<m:Label id="_IDGenLabel4172" text="Contact Person Name " />
+							<m:Text id="_IDGenText1473" text="{mvendor>contactPerson}"/>
+							<m:Label id="_IDGenLabel41467" text="Contact Person Mobile " />
+							<m:Text id="_IDGenText441647" text="{mvendor>contactPhone}"/>
+							<m:Label id="_IDGenLabel14647" text="Contact Person Email " />
+							<m:Text id="_IDGenText16457" text="{mvendor>contactEmail}"/>
+                             </form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+	<!--  LOCATION OF VENDOR-->
+        <ObjectPageSection id="_IDGenObjectPageSection11" title="Location" class="sapUiResponsiveContentPadding">
+				<subSections>
+					<ObjectPageSubSection id="_IDGenObjectPageSubSection11">
+						<blocks>
+							<form:SimpleForm id="_IDGenSimpleForm11" title="" editable="false" class="editableForm sapUiSmallMarginTopBottom">
+									
+						<form:content>
+							<m:Label id="_IDGenLabel167" text="Country" />
+							<m:Text id="_IDGenText167" text="{mvendor>country}"/>
+						<m:Label id="_IDGenLabel17" text="City " />
+							<m:Text id="_IDGenText17" text="{mvendor>city}"/>
+						<m:Label id="_IDGenLabel417" text="Region 1 " />
+							<m:Text id="_IDGenText147" text="{mvendor>region1}"/>
+                            <m:Label id="_IDGenLabel11" text="Address  "/>
+                            <m:Text id="_IDGenText11" text="{mvendor>address}"/>
+							<m:Label id="_IDGenLabel1467" text="ZipCode " />
+							<m:Text id="_IDGenText1647" text="{mvendor>zipCode}"/>
+							</form:content>
+						
+							</form:SimpleForm>
+						</blocks>				
+					</ObjectPageSubSection>				
+				</subSections>			
+			</ObjectPageSection>	
+			
+				
+	<!--  PROJECT DETAILS-->
+<ObjectPageSection id="_IDGenObjectPageSection21" title="Projects" class="sapUiResponsiveContentPadding">
+				<subSections>
+					<ObjectPageSubSection id="_IDGenObjectPageSubSection21" >
+						<blocks>
+
+							<m:Table id="_IDGenTable1" mode="SingleSelectMaster" itemPress="handleItemPress"  items="{mvendor>Projects}">
+						<m:columns>
+						 <m:Column id="_IDGenColumn1">
+						 <m:Text id="cdbh" text="ProjectName" ></m:Text>
+						 </m:Column>
+						 <m:Column id="_IDGenColumn11">
+						 <m:Text id="cdb1h" text="Project Description" ></m:Text>
+						 </m:Column>
+						  <m:Column id="_IDGenColumn121">
+						 <m:Text id="cdb1h2" text="Start Date"  ></m:Text>
+						 </m:Column>
+						  <m:Column id="_IDGenColumn131">
+						 <m:Text id="cdb13h" text="End Date" ></m:Text>
+						 </m:Column>
+						  <m:Column id="_IDGenColumn141">
+						 <m:Text id="cdb14h" text="Status" ></m:Text>
+						 </m:Column>
+						</m:columns>
+					<m:items>
+					<m:ColumnListItem id="_IDGenColumnListItem1"  >
+					
+					<m:ObjectIdentifier id="_IDGenObjectIdentifier1" text="{mvendor>ProjectName}" ></m:ObjectIdentifier>
+					<m:ObjectIdentifier id="_IDGenObjectIdentifier11" text="{mvendor>Description}" ></m:ObjectIdentifier>
+					<m:ObjectIdentifier id="_IDGenObjectIdentifier21" text="{mvendor>startdate}" ></m:ObjectIdentifier>
+					<m:ObjectIdentifier id="_IDGenObjectIdentifier31" text="{mvendor>enddate}" ></m:ObjectIdentifier>
+					<m:ObjectIdentifier id="_IDGenObjectIdentifier14" text="{mvendor>Status}" ></m:ObjectIdentifier>
+					
+					</m:ColumnListItem>
+					</m:items>
+					 </m:Table>
+						</blocks>
+					</ObjectPageSubSection>				
+				</subSections>			
+			</ObjectPageSection>	
+	<!-- ATTACHMENTS-->
+<ObjectPageSection id="_IDGenObjectPageSection31" title="Attachments" class="sapUiResponsiveContentPadding">
+				<subSections>
+					<ObjectPageSubSection id="_IDGenObjectPageSubSection31">
+						<blocks>
+							<form:SimpleForm id="_IDGenSimpleForm31"
+								maxContainerCols="2"
+								editable="false"
+								layout="ResponsiveGridLayout"
+								labelSpanL="12"
+								labelSpanM="12"
+								emptySpanL="0"
+								emptySpanM="0"
+								columnsL="1"
+								columnsM="1">	
+		 <upload:UploadSet id="uploadCollection" items="{path:'attachmentModel>/', templateShareable: false}" mode="None"  afterItemAdded="onChange" beforeItemRemoved="onFileDeleted"  noDataDescription="Drop files using Upload button" >
+		  <!-- uploadButtonInvisible="false" mode="SingleSelectMaster" -->
+                                    <upload:items>
+									<upload:UploadSetItem id="_IDGenUploadSetItem1" fileName="{attachmentModel>FileName}" url="{attachmentModel>FileContent}"/>
+                                </upload:items>
+								</upload:UploadSet>
+                           </form:SimpleForm>
+						</blocks>				
+					</ObjectPageSubSection>				
+				</subSections>			
+			</ObjectPageSection>
+				
+      </sections>
+     <!--Accept and reject buttons for leave request-->
+		<footer>
+            <m:OverflowToolbar id="_IDGenOverflowToolbar1">
+                <m:ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                <m:Button id="_IDGenButton6"  
+				text="Edit" 
+				class="sapUiSmallMargin" 
+				  press="onEdit" 
+				  />            
+		  <m:Button id="_IDGenButton16"  
+				text="Delete" 
+				class="sapUiSmallMargin" 
+				  press="onDetailPageDelete" 
+				   />
+            </m:OverflowToolbar>
+        </footer>
+	</ObjectPageLayout>
+</mvc:View> 

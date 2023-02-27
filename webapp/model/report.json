@@ -1,0 +1,536 @@
+{ 
+	"TotalPrograms":"6",
+	"TotalTask":"31",
+	"ProjectsSubmitted":"3",
+	"ProjectsDelayed":"1",
+	"ProjectsInProgress":"2",
+	"NewProjects":"3",
+	"StatusFlow_En": [
+		{
+		"statusText": "New",
+		"NoOfReq": 3
+	}, {
+		"statusText": "In Progess",
+		"NoOfReq": 3
+	}, {
+		"statusText": "Delayed",
+		"NoOfReq": 2
+	},{
+		"statusText": "Submitted",
+		"NoOfReq": 3
+	}
+	],
+	"Months": [{
+		"month": "Jan",
+		"noOfProjects": "2",
+		"ProjectName1":"Customer Onboarding",
+		"ProjectName2":"Vendor Onboarding"
+	}, {
+		"month": "Feb",
+		"noOfProjects": "1",
+		"ProjectName1":"Customer Onboarding"
+	}, {
+		"month": "Mar",
+		"noOfProjects": "2",
+		"ProjectName1":"Customer Onboarding",
+		"ProjectName2":"Employee Onboarding"
+	}, {
+		"month": "Apr",
+		"noOfProjects": "1",
+		"ProjectName1":"Customer Onboarding"
+	}, {
+		"month": "May",
+		"noOfProjects": "2",
+		"ProjectName1":"Customer Onboarding",
+		"ProjectName2":"Customer Onboarding"
+	}, {
+		"month": "Jun",
+		"noOfProjects": "0"
+	}, {
+		"month": "Jul",
+		"noOfProjects": "2",
+		"ProjectName1":"Customer Onboarding",
+		"ProjectName2":"Customer Onboarding"
+	}, {
+		"month": "Aug",
+		"noOfProjects": "0"
+	}, {
+		"month": "Sep",
+		"noOfProjects": "2",
+		"ProjectName1":"Customer Onboarding",
+		"ProjectName2":"Customer Onboarding"
+	}, {
+		"month": "Oct",
+		"noOfProjects": "1",
+		"ProjectName1":"Customer Onboarding"
+	}, {
+		"month": "Nov",
+		"noOfProjects": "2",
+		"ProjectName1":"Customer Onboarding",
+		"ProjectName2":"Manage Vendor "
+	}, { 
+		"month": "Dec",
+		"noOfProjects": "1",
+		"ProjectName1":"Customer Onboarding"
+	}],
+
+	"Projects":[{
+        "ProjectName":"Customer Onboarding",
+    "Startdate": "01-01-2023",
+    "Enddate": "31-04-2023",
+    "Description": "Customer Details",
+    "Status": "New",
+	"projectprogress":"20",
+	"actualbudget": 100000,
+	"targetbudget": 99000,
+    "milestone":"4",
+    "task":"5",
+	"totalmilestonecompleted":2,
+	"delayedmilestone":1,
+	"inprogressmilestone":1
+},
+	{
+        "ProjectName":"Manage Projects",
+    "Startdate": "01-06-2022",
+    "Enddate": "31-12-2022",
+    "Description": "Data Governance Initiative",
+    "Status": "New",
+	"projectprogress":"40",
+	"actualbudget": 100000,
+		"targetbudget": 99000,
+	"milestone":"9",
+    "task":"4",
+	"totalmilestonecompleted":4,
+	"delayedmilestone":2,
+	"inprogressmilestone":3
+	
+},
+	{
+        "ProjectName":"Manage Leave",
+    "Startdate": "01-06-2022",
+    "Enddate": "31-12-2022",
+    "Description": "Data Governance Initiative",
+    "Status": "New",
+	"projectprogress":"10",
+	"actualbudget": 100000,
+	"targetbudget": 90000,
+	"milestone":"4",
+    "task":"6",
+	"totalmilestonecompleted":4,
+	"inprogressmilestone":1
+	
+},
+	{
+    "ProjectName":"Manage Vendor",
+    "Startdate": "01-06-2022",
+    "Enddate": "31-12-2022",
+    "Description": "Data Governance Initiative",
+    "Status": "Submitted",
+	"projectprogress":"100",
+	"actualbudget": 120000,
+	"targetbudget": 100000,
+	"milestone":"4",
+    "task":"6"
+},
+	{
+        "ProjectName":"Manage Customer",
+    "Startdate": "01-06-2022",
+    "Enddate": "31-12-2022",
+    "Description": "Data Governance Initiative",
+    "Status": "Submitted",
+	"projectprogress":"100",
+	"actualbudget": 120000,
+	"targetbudget": 100000,
+	"milestone":"4",
+    "task":"5"
+	
+},
+	{
+        "ProjectName":"DGI0.Program Kick Off",
+    "Startdate": "01-06-2022",
+    "Enddate": "31-12-2022",
+    "Description": "Data Governance Initiative",
+    "Status": "Submitted",
+	"projectprogress":"100",
+	"milestone":"10",
+	"actualbudget": 100000,
+	"targetbudget": 90000,
+    "task":"12",
+	"totalmilestonecompleted":4
+},
+	{
+		"ProjectName":"DIA",
+		"Startdate": "01-01-2023",
+		"Enddate": "31-04-2023",
+		"Description": "Customer Details",
+		"Status": "In Progess",
+		"projectprogress":"80",
+		"milestone":"4",
+		"task":"6",
+		"actualbudget": 100000,
+	"targetbudget": 99000,
+		"customername":"Client1",
+		"totalmilestonecompleted":2,
+	"delayedmilestone":2,
+	"inprogressmilestone":2
+	},
+		{
+		"ProjectName":"Leave Tracking",
+		"Startdate": "01-06-2022",
+		"Enddate": "31-12-2022",
+		"Description": "Data Governance Initiative",
+		"Status": "In Progess",
+		"projectprogress":"70",
+		"milestone":"2",
+		"task":"4",
+		"actualbudget": 100000,
+	"targetbudget": 99000,
+		"customername":"Client Ltd",
+		"totalmilestonecompleted":1,
+	"inprogressmilestone":1
+	},
+	{
+	"ProjectName":"Time Entry",
+	"Startdate": "01-06-2022",
+	"Enddate": "31-12-2022",
+	"Description": "Data Governance Initiative",
+	"Status": "Delayed",
+	"projectprogress":"50",
+	"milestone":"4",
+	"task":"6",
+	"actualbudget": 100000,
+	"targetbudget": 99000,
+	"customername":"Client2",
+	"delayedmilestone":2,
+	"inprogressmilestone":1,
+	"totalmilestonecompleted":1
+}
+],
+	"Hours":[{
+		"name": "Anu",
+		"day1":"5",
+		"day2":"8",
+		"day3":"5",
+		"day4":"7",
+		"day5":"8",
+		"nhour":"33"
+	},
+	{
+		"name": "Varun",
+		"day1":"5",
+		"day2":"8",
+		"day3":"5",
+		"day4":"7",
+		"day5":"13",
+		"nhour":"38"
+	},{
+		"name": "Kavya",
+		"day1":"5",
+		"day2":"8",
+		"day3":"10",
+		"day4":"13",
+		"day5":"8",
+		"nhour":"44"
+	},
+	{
+		"name": "Renne",
+		"day1":"5",
+		"day2":"8",
+		"day3":"5",
+		"day4":"7",
+		"day5":"8",
+		"nhour":"33"
+	},{
+		"name": "Jorg",
+		"day1":"5",
+		"day2":"8",
+		"day3":"5",
+		"day4":"15",
+		"day5":"Leave",
+		"nhour":"33"
+	}],
+
+	"Employeedetails": [{
+		"name":"Anu",
+		"noofleavetaken":3,
+		"balanceleave":12,
+		"leavelastapplied":"12-3-2022",
+		"sickleave":0,
+		"ForwardLeaves":2,
+		"role":"Developer",
+		"nprojects":1,
+		"ProjectName0":"Manage Vendor",
+		"ProjectName1":0,
+		"ntask":"3",
+		"ntaskcompleted":"2",
+		"ntaskinprogress":"1",
+		"hoursspent0":5
+	}, {
+		"name":"Georg",
+		"noofleavetaken":4,
+		"balanceleave":12,
+		"leavelastapplied":"12-3-2022",
+		"sickleave":0,
+		"ForwardLeaves":2,
+		"role":"Developer",
+		"ntask":"7",
+		"nprojects":1,
+		"ProjectName0":"Manage Customer",
+		"ProjectName1": "0",
+		"ntaskcompleted":"5",
+		"ntaskinprogress":"2",
+		"hoursspent0":8
+	}, {
+		"name":"Jorg",
+		"noofleavetaken":3,
+		"balanceleave":12,
+		"leavelastapplied":"12-3-2022",
+		"sickleave":0,
+		"ForwardLeaves":2,
+		"role":"Developer",
+		"nprojects":2,
+		"ProjectName0":"Manage Employee",
+		"ProjectName1":"Manage Customer",
+		"ntask":"5",
+		"ntaskcompleted":"2",
+		"ntaskinprogress":"3",
+		"hoursspent0":5,
+		"hoursspent1":7
+	}, {
+		"name":"Kavya",
+		"noofleavetaken":2,
+		"balanceleave":12,
+		"leavelastapplied":"12-3-2022",
+		"sickleave":0,
+		"ForwardLeaves":2,
+		"role":"Team Lead",
+		"nprojects":2,
+		"ProjectName0":"Danao ",
+		"ProjectName1":"Manage Customer",
+		"ntask":"5",
+		"ntaskcompleted":"4",
+		"ntaskinprogress":"1",
+		"hoursspent0":6,
+		"hoursspent1":6
+	}, {
+		"name":"Varun",
+		"noofleavetaken":1,
+		"balanceleave":12,
+		"leavelastapplied":"12-3-2022",
+		"sickleave":0,
+		"ForwardLeaves":2,
+		"role":"Developer",
+		"nprojects":2,
+		"ProjectName0":"Manage Vendor",
+		"ProjectName1":"Manage Employee",
+		"ntask":"7",
+		"ntaskcompleted":"5",
+		"ntaskinprogress":"2",
+		"hoursspent0":8,
+		"hoursspent1":4
+	}],
+	"Projectsubmitted":[{
+		"ProjectName":"Customer Onboarding",
+		"Startdate": "01-01-2023",
+		"Enddate": "31-04-2023",
+		"Description": "Customer Details",
+		"Status": "Submitted",
+		"milestone":"4",
+		"task":"10",
+		"customername":"Client1"
+	},
+		{
+			"ProjectName":"Manage Projects",
+		"Startdate": "01-06-2022",
+		"Enddate": "31-12-2022",
+		"Description": "Data Governance Initiative",
+		"Status": "Submitted",
+		"milestone":"4",
+		"task":"10",
+		"customername":"Client Ltd"
+	},
+		{
+			"ProjectName":"Manage Leave",
+		"Startdate": "01-06-2022",
+		"Enddate": "31-12-2022",
+		"Description": "Data Governance Initiative",
+		"Status": "Submitted",
+		"milestone":"4",
+		"task":"10",
+		"customername":"Client2"
+	},
+		{
+			"ProjectName":"Manage Vendor",
+		"Startdate": "01-06-2022",
+		"Enddate": "31-12-2022",
+		"Description": "Data Governance Initiative",
+		"Status": "Submitted",
+		"milestone":"4",
+		"task":"10",
+		"customername":"Client3"
+	},
+		{
+			"ProjectName":"Manage Customer",
+		"Startdate": "01-06-2022",
+		"Enddate": "31-12-2022",
+		"Description": "Data Governance Initiative",
+		"Status": "Submitted",
+		"milestone":"4",
+		"task":"10",
+		"customername":"Client4"
+	},
+		{
+			"ProjectName":"DGI0.Program Kick Off",
+		"Startdate": "01-06-2022",
+		"Enddate": "31-12-2022",
+		"Description": "Data Governance Initiative",
+		"Status": "Submitted",
+		"milestone":"4",
+		"task":"10",
+		"customername":"Client5"
+	},
+		{
+			"ProjectName":"Danao",
+		"Startdate": "01-06-2022",
+		"Enddate": "31-12-2022",
+		"Description": "Data Governance Initiative",
+		"Status": "Submitted",
+		"milestone":"4",
+		"customername":"The Corporation",
+		"task":"10"
+		},
+		{
+			"ProjectName":"Danao",
+		"Startdate": "01-06-2022",
+		"Enddate": "31-12-2022",
+		"Description": "Data Governance Initiative",
+		"Status": "Submitted",
+		"milestone":"4",
+		"customername":"The Corporation",
+		"task":"10"
+		},
+		{
+			"ProjectName":"Customer Onboarding",
+			"Startdate": "01-01-2023",
+			"Enddate": "31-04-2023",
+			"Description": "Customer Details",
+			"Status": "Delayed",
+			"milestone":"4",
+			"task":"10",
+			"customername":"Client1"
+		},
+			{
+				"ProjectName":"Manage Leave",
+			"Startdate": "01-06-2022",
+			"Enddate": "31-12-2022",
+			"Description": "Data Governance Initiative",
+			"Status": "Delayed",
+			"milestone":"4",
+			"task":"10",
+			"customername":"Client2"
+		}
+	],
+		"Projectdelayed":[{
+		"ProjectName":"Customer Onboarding",
+		"Startdate": "01-01-2023",
+		"Enddate": "31-04-2023",
+		"Description": "Customer Details",
+		"Status": "Delayed",
+		"milestone":"4",
+		"task":"10",
+		"customername":"Client1"
+	},
+		{
+			"ProjectName":"Manage Leave",
+		"Startdate": "01-06-2022",
+		"Enddate": "31-12-2022",
+		"Description": "Data Governance Initiative",
+		"Status": "Delayed",
+		"milestone":"4",
+		"task":"10",
+		"customername":"Client2"
+	}],
+	"ProjectInProgress":[{
+		"ProjectName":"Customer Onboarding",
+		"Startdate": "01-01-2023",
+		"Enddate": "31-04-2023",
+		"Description": "Customer Details",
+		"Status": "In Progess",
+		"milestone":"4",
+		"task":"10",
+		"customername":"Client1"
+	},
+		{
+			"ProjectName":"Manage Projects",
+		"Startdate": "01-06-2022",
+		"Enddate": "31-12-2022",
+		"Description": "Data Governance Initiative",
+		"Status": "In Progess",
+		"milestone":"4",
+		"task":"10",
+		"customername":"Client Ltd"
+	},
+		{
+			"ProjectName":"Manage Leave",
+		"Startdate": "01-06-2022",
+		"Enddate": "31-12-2022",
+		"Description": "Data Governance Initiative",
+		"Status": "In Progess",
+		"milestone":"4",
+		"task":"10",
+		"customername":"Client2"
+	}],
+	"New_Projects":[{
+        "ProjectName":"Customer Onboarding",
+    "Startdate": "01-01-2023",
+    "Enddate": "31-04-2023",
+    "Description": "Customer Details",
+    "Status": "New",
+	"projectprogress":"20",
+	"actualbudget": 100000,
+	"targetbudget": 99000,
+    "milestone":"4",
+    "task":"10",
+	"totalmilestonecompleted":2,
+	"delayedmilestone":1,
+	"inprogressmilestone":1
+},
+	{
+        "ProjectName":"Manage Projects",
+    "Startdate": "01-06-2022",
+    "Enddate": "31-12-2022",
+    "Description": "Data Governance Initiative",
+    "Status": "New",
+	"projectprogress":"40",
+	"actualbudget": 100000,
+		"targetbudget": 99000,
+	"milestone":"9",
+    "task":"10",
+	"totalmilestonecompleted":4,
+	"delayedmilestone":2,
+	"inprogressmilestone":3
+},
+	{
+        "ProjectName":"Manage Leave",
+    "Startdate": "01-06-2022",
+    "Enddate": "31-12-2022",
+    "Description": "Data Governance Initiative",
+    "Status": "New",
+	"projectprogress":"10",
+	"actualbudget": 100000,
+	"targetbudget": 90000,
+	"milestone":"4",
+    "task":"10",
+	"totalmilestonecompleted":4
+	
+}]
+	
+	
+
+	
+}
+
+	
+	
+	
+

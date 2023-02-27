@@ -1,0 +1,34 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m">
+	<Dialog id="enterOTP" contentWidth="25rem" title="Request to OTP">
+		<f:Form >
+			<f:layout>
+				<f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout1" adjustLabelSpan="false" columnsL="1" columnsM="1" columnsXL="2" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+					emptySpanXL="0" singleContainerFullSize="false"></f:ResponsiveGridLayout>
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer >
+					<f:formElements>
+						<f:FormElement >
+							<ObjectStatus  text="loginFailedErrorMsg" state="Error" visible="false" />
+							<Label  text="Email:" required="true" />
+					<Input  type="Email" placeholder="Enter Registered Email Id" tooltip="" change="hideErrMsgsShow" class="sapUiSmallMarginBottom"/>
+					<Label  text="Enter OTP"  required="true" />
+					<Input  placeholder="_ _ _ _" value="" width="auto"/>
+					<Text text="" visible="false" id="timer" ></Text>
+							<!--<f:fields>-->
+								<!--<Label text="{i18n>email}:" required="true"/>-->
+							<!--	<Input type="Email" placeholder="Enter Registered Email-Id" tooltip="" change="hideErrMsgsShow" class="sapUiSmallMarginBottom"/>-->
+							<!--	<Input editable="false" visible="false" id="timer" value=""/>-->
+							<!--	<Input placeholder="Enter OTP" value="" width="auto"/>-->
+							<!--</f:fields>-->
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<buttons>
+			<Button  visible="false" press="onSubmit" text="Submit"/>
+			<Button  press="onSend" text="Send OTP"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

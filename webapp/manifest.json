@@ -1,0 +1,189 @@
+{
+  "_version": "1.49.0",
+  "sap.app": {
+    "id": "vaspp.userlogin",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.8.6",
+      "toolsId": "a8598119-9853-4003-af85-ef4994f8bca8"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.110.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "vaspp.userlogin.i18n.i18n"
+        }
+      },
+      "users": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/users.json",
+				"preload": false
+			},
+      "customerInfo": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/customerInfo.json",
+				"preload": false
+			},
+			"projectInfo": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/projectInfo.json",
+				"preload": false
+			},
+			"vendorInfo": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/vendorInfo.json",
+				"preload": false
+			},
+			"navigationList": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/navigationList.json",
+				"preload": false
+			},
+			"roles": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/role.json",
+				"preload": false
+			},
+			"organisations": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/organisation.json",
+				"preload": false
+			},
+			"applications": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/application.json",
+				"preload": false
+			},
+			"glossary": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/glossary.json",
+				"preload": false
+			},
+			"program": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/program.json",
+				"preload": false
+			},
+			"DocAndQues": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/docAndques.json",
+				"preload": false
+			},
+			"assignmentModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/assignments.json",
+				"preload": false
+			},
+      "mreport":{
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/report.json"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "vaspp.userlogin.view",
+        "controlAggregation": "pages",
+        "controlId": "mainContents",
+        "clearControlAggregation": false
+      },
+      "routes": [ 
+        {
+          "name": "RouteApp",
+          "pattern": ":?query:",
+          "target": [
+            "TargetApp"
+          ]
+        },
+        {
+          "name": "TargetApp",
+          "pattern": "",
+          "target": [ ]
+        }
+        
+      ],
+      "targets": {
+        "TargetApp": {
+          "viewType": "XML",
+          "transition": "slide",
+					"clearControlAggregation": false,
+          "viewId": "app",
+          "viewName": "App"
+        }
+
+      }
+    },
+    "rootView": {
+      "viewName": "vaspp.userlogin.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
+

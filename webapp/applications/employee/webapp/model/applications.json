@@ -1,0 +1,20 @@
+{
+    "applications":[
+    {
+    "appName": "Project Management",
+    "appId": "APP0001"
+    },
+    {
+     "appName": "Customer Management",
+     "appId": "APP0002"
+    },
+    {
+        "appName": "Vendor Management",
+        "appId": "APP0003"
+    },
+    {
+        "appName": "Document Management",
+        "appId": "APP0004"
+    }
+]
+}
