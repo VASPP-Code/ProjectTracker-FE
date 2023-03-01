@@ -5,12 +5,12 @@
 			<VBox alignItems="Center" class="sapUiSmallMargin">
 				<VBox id="_IDGenVBoxu2" width="90%">
 					<Label  text="Email:" required="true"/>
-					<Input  type="Email" editable="false" placeholder="email" tooltip="emailTooltip" liveChange="hideErrMsgs"
+					<Input  type="Email" editable="false" value="{/email}" tooltip="emailTooltip" liveChange="hideErrMsgs"
 						class="sapUiSmallMarginBottom"/>
 					<Label  text="New Password:" required="true"/>
-					<Input  type="Password" placeholder="password" tooltip="passwordTooltip" liveChange="hideErrMsgs"/>
+					<Input  type="Password" placeholder="New Password" tooltip="passwordTooltip" liveChange="hideErrMsgs"/>
 						<Label  text="Confirm Password:" required="true"/>
-					<Input  type="Password" placeholder="password" tooltip="passwordTooltip" liveChange="hideErrMsgs"/>
+					<Input  type="Password" placeholder="Confirm Password" tooltip="passwordTooltip" liveChange="hideErrMsgs"/>
 				</VBox>
 			</VBox>
 		</content>
