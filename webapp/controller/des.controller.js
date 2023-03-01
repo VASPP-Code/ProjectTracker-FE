@@ -10,7 +10,7 @@ sap.ui.define([
 	"sap/m/ButtonType",
 	"sap/m/Dialog",
 	"sap/m/Text"
-
+	
 ], function (Controller, MessageToast, MessageBox, Fragment, Component, ComponentContainer, Button, ButtonType, Dialog,
 	Text) {
 	"use strict";
@@ -85,7 +85,7 @@ sap.ui.define([
 		},
 
 		OnUserSettingPress: function (evt) {
-
+			
 			var launchView = this;
 			var userData = JSON.parse(window.localStorage.getItem("loggedOnUserData"));
 			//this.byId("app").setVisible(false);
@@ -93,7 +93,7 @@ sap.ui.define([
 				launchView.userFragment = new sap.ui.xmlfragment("vaspp.userlogin.fragment.user", this);
 				//launchView.userFragment.setModel(this.getOwnerComponent().getModel("i18n"), "i18n");
 			}
-
+     
 			// launchView.userFragment.getContent()[0].getItems()[0].getItems()[1].setValue(userData.email);
 			// launchView.userFragment.getContent()[0].getItems()[0].getItems()[3].setValue(userData.password);
 			launchView.userDetailsFragment.close();
@@ -187,7 +187,7 @@ sap.ui.define([
 					++errorsCount;
 				}
 				if (!password) {
-					errorMsg = ("enterPasswordPrompt");
+					errorMsg =("enterPasswordPrompt");
 					this.userFragment.getContent()[0].getItems()[0].getItems()[3].setValueStateText(errorMsg).setValueState("Error");
 					++errorsCount;
 				}
@@ -226,25 +226,26 @@ sap.ui.define([
 				// $.post("/deswork/api/auth/local", inputData, function (resp, err){
 				// 	console.log(JSON.parse(resp));
 				// })
-				$.post("/deswork/api/auth/local", inputData, function (resp, next) {
-				//	if (email && password) {
-						console.log(JSON.parse(resp));
-						//const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwia…yMzl9.gqPBePog0kKZdJ4wKv_KnBDAREuyMNhmf5uOqPYffrA";
-					//	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwia…5ODJ9.80XLAxMuXAePc7rdgJmpm2ShhqqU50J-j73p-8A09So
-						$.get('/deswork/posts', {
-							headers: {
-							//	Authorization: `Bearer ${token}`,
-							},
-						})
-							.then(response => {
-								// Handle success.
-								//console.log('inputData: ', response.data);
-								console.log("j");
-								that.LoginFragment.close();
-								that.byId("app").setVisible(true);
-								that.loadLaunchpadMenu();
-								//that.byId("app").setVisible(true);
-							
+				$.post("/deswork/api/auth/local", inputData, function (resp, err){
+					console.log(JSON.parse(resp));
+					//if(){console.log("mm")}
+				})
+				if (userData !== null) {
+
+					if (userData.role == "Admin") {
+					}
+					else {
+						//this.performlogin2();
+						that.LoginFragment.close();
+						if (userData !== null) {
+							// that.getView().removeStyleClass("coverImage");
+							// that.LoginFragment.getContent()[0].getItems()[2].getItems()[1].setValue("");
+							// that.LoginFragment.getContent()[0].getItems()[2].getItems()[3].setValue("");
+							that.byId("app").setVisible(true);
+							//that.getView().setBusy(false);
+
+							var loggedOnUserModel = new sap.ui.model.json.JSONModel(userData);
+							that.getOwnerComponent().setModel(loggedOnUserModel, "loggedOnUserModel");
 
 							that.loadLaunchpadMenu();
 							if (this.userDetailsFragment) {
@@ -261,102 +262,23 @@ sap.ui.define([
 								that.byId("app").removeMainContent(1);
 							aMainContents[0].setVisible(false);
 							that.byId("app").addMainContent(appComponentContainer);
-							})
-							.catch(error => {
-								// Handle error.
-								console.log('An error occurred:', error.response);
-							});
-
-				//	}
-					// else {
-					// 	console.log("test");
-					// 	//console.log("n")
-					// 	MessageBox.error("Wrong Credentials!", {});
-					// }
-					//.then(response => {
-					// 	// Handle success.
-					// 	console.log('Well done!');
-					// 	console.log('User profile', response.data.user);
-					// 	console.log('User token', response.data.jwt);
-					//   })
-					//   .catch(error => {
-					// 	// Handle error.
-					// 	console.log('An error occurred:', error.response);
-					//   });
-					//	else{console.log("mm");}
-				})
-				//if (userData !== null) {
-
-				// 	if (userData.role == "Admin") {
-
-
-				// 	}
-				// 	else {
-				// 	//	const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwia…yMzl9.gqPBePog0kKZdJ4wKv_KnBDAREuyMNhmf5uOqPYffrA";
-				// 		//	$.get("/deswork/posts"),{}
-				// 		// 	$.get("/deswork/posts", {
-				// 		//        headers: {
-				// 		//    Authorization: 'Bearer ${token}',
-				// 		//    },
-				// 		// })
-				// 		// $.get('/deswork/posts', {
-				// 		// 	headers: {
-				// 		// 		Authorization: `Bearer ${token}`,
-				// 		// 	},
-				// 		// })
-				// 		// 	.then(response => {
-				// 		// 		// Handle success.
-				// 		// 		console.log('Data: ', response.data);
-				// 		// 	})
-				// 		// 	.catch(error => {
-				// 		// 		// Handle error.
-				// 		// 		console.log('An error occurred:', error.response);
-				// 		// 	});
-
-						
-				// 		// if (userData !== null) {
-				// 		// 	// that.getView().removeStyleClass("coverImage");
-				// 		// 	// that.LoginFragment.getContent()[0].getItems()[2].getItems()[1].setValue("");
-				// 		// 	// that.LoginFragment.getContent()[0].getItems()[2].getItems()[3].setValue("");
-				// 		// 	that.byId("app").setVisible(true);
-				// 		// 	//that.getView().setBusy(false);
-
-				// 		// 	var loggedOnUserModel = new sap.ui.model.json.JSONModel(userData);
-				// 		// 	that.getOwnerComponent().setModel(loggedOnUserModel, "loggedOnUserModel");
-
-				// 		// 	that.loadLaunchpadMenu();
-				// 		// 	if (this.userDetailsFragment) {
-				// 		// 		that.userDetailsFragment.setModel(loggedOnUserModel);
-				// 		// 	}
-				// 		// 	var appComponentContainer;
-				// 		// 	appComponentContainer = new ComponentContainer({
-				// 		// 		height: "100%",
-				// 		// 		name: "vaspp.ProjectStatisticalReport",
-				// 		// 		propagateModel: true
-				// 		// 	});
-				// 		// 	var aMainContents = that.byId("app").getMainContents();
-				// 		// 	if (aMainContents.length === 2)
-				// 		// 		that.byId("app").removeMainContent(1);
-				// 		// 	aMainContents[0].setVisible(false);
-				// 		// 	that.byId("app").addMainContent(appComponentContainer);
-				// 		// }
-				// 	}
-				// }
-
+						}
+					}
+				}
+				else {
+					MessageBox.error("Wrong Credentials!", {});
+				}
+                
 
 
 			}
-			// else {
-			// 	console.log("error")
-			// }
-			
 
 
 		},
 		cancelLogin: function () {
 			this.LoginFragment.close();
 		},
-
+		
 		getUserbyCred: function (email, pwd) {
 			var usersModel = this.getOwnerComponent().getModel("users").getData();
 			for (var i = 0; i < usersModel.length; i++) {
@@ -635,26 +557,6 @@ sap.ui.define([
 		// },
 
 		getOTP: function () {
-			$.post("/deswork/api/auth/forgot-password", {
-            email: '', // user's email
-       })
-      .then(response => {
-		var that = this;
-			this.LoginFragment.close();
-			if (!this.EnterOTP) {
-				this.EnterOTP = new sap.ui.xmlfragment("vaspp.userlogin.fragment.EnterOTP", this);
-				//this.EnterOTP.setModel(this.getOwnerComponent().getModel("i18n"), "i18n");
-
-			}
-			this.EnterOTP.open();
-			sap.ui.getCore().byId("timer").setVisible(false);
-			sap.ui.getCore().byId("onSend").setVisible(true);
-			sap.ui.getCore().byId("onSub").setVisible(true);
-        console.log('Your user received an email');
-          })
-        .catch(error => {
-       console.log('An error occurred:', error.response);
-       });
 			var that = this;
 			this.LoginFragment.close();
 			if (!this.EnterOTP) {
@@ -667,8 +569,8 @@ sap.ui.define([
 			sap.ui.getCore().byId("onSend").setVisible(true);
 			sap.ui.getCore().byId("onSub").setVisible(true);
 		},
-		onOTPCancel: function () {
-
+		onOTPCancel:function(){
+			
 			this.EnterOTP.close();
 			this.LoginFragment.open();
 		},
@@ -741,80 +643,76 @@ sap.ui.define([
 			if (email && OTP) {
 				//this.EnterOTP.setBusy(true);
 				var inputData = {
-					"email": email,
+					"emailid": email,
 					"otp": OTP
 				};
-				$.post("/deswork/api/auth/", inputData, function (resp, next) {
-					//	if (email && password) {
-							console.log(JSON.parse(resp));
+				utils.runService("/IMS", "loginuser_with_otp", inputData, "post", that.oResourceBundle, function (response) {
+					//that.EnterOTP.setBusy(false);
+					var errMsg = that.EnterOTP.getContent()[0].getFormContainers()[0].getFormElements()[0].getFields()[0];
+					if (response.status === "success") {
+
+						that.EnterOTP.getContent()[0].getFormContainers()[0].getFormElements()[0].getFields()[2].setValue("");
+						that.EnterOTP.getContent()[0].getFormContainers()[0].getFormElements()[0].getFields()[4].setValue("");
+						that.EnterOTP.close();
+						that.byId("app").setVisible(true);
+						//	that.getView().setBusy(true);
+
+						var userData = response.data[0];
+						userData.profilePhotoInfo = null;
+						userData.roles = userData.role; //role is coming as an array from backend
+
+						if (userData.role !== "Anonymous User") {
+							if (userData.roles.type) {
+								userData.role = userData.roles.type;
+							} else {
+								userData.role = userData.roles[0].type;
+							}
+						} else {
+							userData.pagepermission = [{
+								"applicationname": "My Surveys",
+								"applicationid": "APP100033",
+								"createid": true,
+								"readid": true,
+								"updateid": true,
+								"deleteid": true,
+								"shareid": false
+							}];
+							userData.user_emailid = email;
+						}
+						// Detecting the role key (role key tells the actual role to programmers).
+						// A role can be in English, German etc. but the role key is always in english with lowercase letters.
+						// Role key is served by the launchpad application and it is used for programming purpose in different applications.
+						if (userData.role.toLowerCase().includes("manager") || userData.role.toLocaleLowerCase().includes(
+							"leiter") || userData.role.toLocaleLowerCase().includes(
+								"geschäftsführer") || userData.role.toLocaleLowerCase().includes("direktor")) {
+							userData.roleKey = "manager";
+						} else if (userData.role.toLowerCase().includes("auditor") || userData.role.toLocaleLowerCase().includes(
+							"prüfer") || userData.role.toLocaleLowerCase().includes("prüfender")) {
+							userData.roleKey = "auditor";
+						} else {
+							userData.roleKey = userData.role.toLocaleLowerCase();
+						}
+
+						userData.lastLogonTimestamp = new Date().toISOString(); // Can be used for session management
+						var loggedOnUserModel = new sap.ui.model.json.JSONModel(userData);
+						var keepRemembered = true;
+						that.getOwnerComponent().setModel(loggedOnUserModel, "loggedOnUserModel");
+						if (keepRemembered) {
+							window.localStorage.setItem("loggedOnUserData", JSON.stringify(userData));
+						} else {
+							window.localStorage.setItem("loggedOnUserData", null);
+						}
+						that.loadLaunchpadMenu();
+						if (that.userDetailsFragment) {
+							that.userDetailsFragment.setModel(loggedOnUserModel);
+						}
+						//that.getView().setBusy(false);
+					} else if (response.message.includes("Invalid Credentials")) {
+						errMsg.setVisible(true);
+					} else {
+						MessageBox.error(response.message + "\n\n" + that.oResourceBundle.getText("loginFailureErrorMsg") + "\n\n" + that.oResourceBundle.getText("reportErrorToAdmin"));
+					}
 				});
-				// utils.runService("/IMS", "loginuser_with_otp", inputData, "post", that.oResourceBundle, function (response) {
-				// 	//that.EnterOTP.setBusy(false);
-				// 	var errMsg = that.EnterOTP.getContent()[0].getFormContainers()[0].getFormElements()[0].getFields()[0];
-				// 	if (response.status === "success") {
-
-				// 		that.EnterOTP.getContent()[0].getFormContainers()[0].getFormElements()[0].getFields()[2].setValue("");
-				// 		that.EnterOTP.getContent()[0].getFormContainers()[0].getFormElements()[0].getFields()[4].setValue("");
-				// 		that.EnterOTP.close();
-				// 		that.byId("app").setVisible(true);
-				// 		//	that.getView().setBusy(true);
-
-				// 		var userData = response.data[0];
-				// 		userData.profilePhotoInfo = null;
-				// 		userData.roles = userData.role; //role is coming as an array from backend
-
-				// 		if (userData.role !== "Anonymous User") {
-				// 			if (userData.roles.type) {
-				// 				userData.role = userData.roles.type;
-				// 			} else {
-				// 				userData.role = userData.roles[0].type;
-				// 			}
-				// 		} else {
-				// 			userData.pagepermission = [{
-				// 				"applicationname": "My Surveys",
-				// 				"applicationid": "APP100033",
-				// 				"createid": true,
-				// 				"readid": true,
-				// 				"updateid": true,
-				// 				"deleteid": true,
-				// 				"shareid": false
-				// 			}];
-				// 			userData.user_emailid = email;
-				// 		}
-				// 		// Detecting the role key (role key tells the actual role to programmers).
-				// 		// A role can be in English, German etc. but the role key is always in english with lowercase letters.
-				// 		// Role key is served by the launchpad application and it is used for programming purpose in different applications.
-				// 		if (userData.role.toLowerCase().includes("manager") || userData.role.toLocaleLowerCase().includes(
-				// 			"leiter") || userData.role.toLocaleLowerCase().includes(
-				// 				"geschäftsführer") || userData.role.toLocaleLowerCase().includes("direktor")) {
-				// 			userData.roleKey = "manager";
-				// 		} else if (userData.role.toLowerCase().includes("auditor") || userData.role.toLocaleLowerCase().includes(
-				// 			"prüfer") || userData.role.toLocaleLowerCase().includes("prüfender")) {
-				// 			userData.roleKey = "auditor";
-				// 		} else {
-				// 			userData.roleKey = userData.role.toLocaleLowerCase();
-				// 		}
-
-				// 		userData.lastLogonTimestamp = new Date().toISOString(); // Can be used for session management
-				// 		var loggedOnUserModel = new sap.ui.model.json.JSONModel(userData);
-				// 		var keepRemembered = true;
-				// 		that.getOwnerComponent().setModel(loggedOnUserModel, "loggedOnUserModel");
-				// 		if (keepRemembered) {
-				// 			window.localStorage.setItem("loggedOnUserData", JSON.stringify(userData));
-				// 		} else {
-				// 			window.localStorage.setItem("loggedOnUserData", null);
-				// 		}
-				// 		that.loadLaunchpadMenu();
-				// 		if (that.userDetailsFragment) {
-				// 			that.userDetailsFragment.setModel(loggedOnUserModel);
-				// 		}
-				// 		//that.getView().setBusy(false);
-				// 	} else if (response.message.includes("Invalid Credentials")) {
-				// 		errMsg.setVisible(true);
-				// 	} else {
-				// 		MessageBox.error(response.message + "\n\n" + that.oResourceBundle.getText("loginFailureErrorMsg") + "\n\n" + that.oResourceBundle.getText("reportErrorToAdmin"));
-				// 	}
-				// });
 			} else {
 				var errorMsg,
 					errorsCount = 0;
@@ -895,7 +793,7 @@ sap.ui.define([
 			var sideBarMenuModel = new sap.ui.model.json.JSONModel(obj);
 			that.byId("sideBarMenu").setModel(sideBarMenuModel);
 			that.byId("sideBarMenu").setSelectedItem(that.byId("sideBarMenu").getItem().getItems()[0]);
-			//that.setPermissions();
+			that.setPermissions();
 		},
 		// setPermissions: function () {
 		// 	var sideBarMenuData = this.byId("sideBarMenu").getModel().getData().navigation,
@@ -957,68 +855,68 @@ sap.ui.define([
 
 		// 	this.byId("sideBarMenu").getModel().updateBindings(true);
 		// },
-		// setPermissions: function () {
-		// 	var sideBarMenuData = this.byId("sideBarMenu").getModel().getData().navigation,
-		// 		//userData = this.getOwnerComponent().getModel("loggedOnUserModel").getData(),
-		// 		//permissionData = userData.pagepermission,
-		// 	//	userRole = userData.role,
-		// 		permittedAppName;
-		// 	for (var appIndex = 0; appIndex < permissionData.length; appIndex++) {
-		// 		permittedAppName = permissionData[appIndex].name;
-		// 		// Manipulating permissions for main menu items
-		// 		for (var itemIndex = 0; itemIndex < sideBarMenuData.length; itemIndex++) {
+		setPermissions: function () {
+			var sideBarMenuData = this.byId("sideBarMenu").getModel().getData().navigation,
+				userData = this.getOwnerComponent().getModel("loggedOnUserModel").getData(),
+				permissionData = userData.pagepermission,
+				userRole = userData.role,
+				permittedAppName;
+			for (var appIndex = 0; appIndex < permissionData.length; appIndex++) {
+				permittedAppName = permissionData[appIndex].name;
+				// Manipulating permissions for main menu items
+				for (var itemIndex = 0; itemIndex < sideBarMenuData.length; itemIndex++) {
 
-		// 			if (sideBarMenuData[itemIndex].id === permissionData[appIndex].applicationid || sideBarMenuData[itemIndex].title ===
-		// 				permittedAppName) {
-		// 				sideBarMenuData[itemIndex].permissions.create = permissionData[appIndex].create === "true" || permissionData[appIndex].create ===
-		// 					true;
-		// 				sideBarMenuData[itemIndex].permissions.read = permissionData[appIndex].read === "true" || permissionData[appIndex].read ===
-		// 					true;
-		// 				sideBarMenuData[itemIndex].permissions.update = permissionData[appIndex].update === "true" || permissionData[appIndex].update ===
-		// 					true;
-		// 				sideBarMenuData[itemIndex].permissions.delete = permissionData[appIndex].delete === "true" || permissionData[appIndex].delete ===
-		// 					true;
-		// 			}
+					if (sideBarMenuData[itemIndex].id === permissionData[appIndex].applicationid || sideBarMenuData[itemIndex].title ===
+						permittedAppName) {
+						sideBarMenuData[itemIndex].permissions.create = permissionData[appIndex].create === "true" || permissionData[appIndex].create ===
+							true;
+						sideBarMenuData[itemIndex].permissions.read = permissionData[appIndex].read === "true" || permissionData[appIndex].read ===
+							true;
+						sideBarMenuData[itemIndex].permissions.update = permissionData[appIndex].update === "true" || permissionData[appIndex].update ===
+							true;
+						sideBarMenuData[itemIndex].permissions.delete = permissionData[appIndex].delete === "true" || permissionData[appIndex].delete ===
+							true;
+					}
 
-		// 			// Manipulating permissions for sub menu items
-		// 			if (sideBarMenuData[itemIndex].items.length) {
-		// 				for (var subItemIndex = 0; subItemIndex < sideBarMenuData[itemIndex].items.length; subItemIndex++) {
-		// 					if (sideBarMenuData[itemIndex].items[subItemIndex].id === permissionData[appIndex].applicationid || sideBarMenuData[
-		// 						itemIndex]
-		// 						.items[
-		// 						subItemIndex].title === permittedAppName) {
-		// 						sideBarMenuData[itemIndex].items[subItemIndex].permissions.create = permissionData[appIndex].create === "true" ||
-		// 							permissionData[appIndex].create === true;
-		// 						sideBarMenuData[itemIndex].items[subItemIndex].permissions.read = permissionData[appIndex].read === "true" ||
-		// 							permissionData[
-		// 								appIndex].read === true;
-		// 						sideBarMenuData[itemIndex].items[subItemIndex].permissions.update = permissionData[appIndex].update === "true" ||
-		// 							permissionData[appIndex].update === true;
-		// 						sideBarMenuData[itemIndex].items[subItemIndex].permissions.delete = permissionData[appIndex].delete === "true" ||
-		// 							permissionData[appIndex].delete === true;
-		// 					}
-		// 				}
-		// 			}
-		// 		}
-		// 	}
+					// Manipulating permissions for sub menu items
+					if (sideBarMenuData[itemIndex].items.length) {
+						for (var subItemIndex = 0; subItemIndex < sideBarMenuData[itemIndex].items.length; subItemIndex++) {
+							if (sideBarMenuData[itemIndex].items[subItemIndex].id === permissionData[appIndex].applicationid || sideBarMenuData[
+								itemIndex]
+								.items[
+								subItemIndex].title === permittedAppName) {
+								sideBarMenuData[itemIndex].items[subItemIndex].permissions.create = permissionData[appIndex].create === "true" ||
+									permissionData[appIndex].create === true;
+								sideBarMenuData[itemIndex].items[subItemIndex].permissions.read = permissionData[appIndex].read === "true" ||
+									permissionData[
+										appIndex].read === true;
+								sideBarMenuData[itemIndex].items[subItemIndex].permissions.update = permissionData[appIndex].update === "true" ||
+									permissionData[appIndex].update === true;
+								sideBarMenuData[itemIndex].items[subItemIndex].permissions.delete = permissionData[appIndex].delete === "true" ||
+									permissionData[appIndex].delete === true;
+							}
+						}
+					}
+				}
+			}
 
-		// 	// If the super admin has logged on then giving all the permissions for the Users Management app
-		// 	if (userRole.toLowerCase() === "superadmin") {
-		// 		for (var itemIndex = 0; itemIndex < sideBarMenuData.length; itemIndex++) {
-		// 			if (sideBarMenuData[itemIndex].key === "UsersManagement") { // Specially setting permissions for the Users Management app
-		// 				sideBarMenuData[itemIndex].permissions.create = true;
-		// 				sideBarMenuData[itemIndex].permissions.read = true;
-		// 				sideBarMenuData[itemIndex].permissions.update = true;
-		// 				sideBarMenuData[itemIndex].permissions.delete = true;
-		// 				break;
-		// 			}
-		// 		}
-		// 	} else if (permissionData.length === 0) { // If no application is given access to the user yet (except super admin)
-		// 		MessageBox.information(this.oResourceBundle.getText("notAppPermitted"));
-		// 	}
+			// If the super admin has logged on then giving all the permissions for the Users Management app
+			if (userRole.toLowerCase() === "superadmin") {
+				for (var itemIndex = 0; itemIndex < sideBarMenuData.length; itemIndex++) {
+					if (sideBarMenuData[itemIndex].key === "UsersManagement") { // Specially setting permissions for the Users Management app
+						sideBarMenuData[itemIndex].permissions.create = true;
+						sideBarMenuData[itemIndex].permissions.read = true;
+						sideBarMenuData[itemIndex].permissions.update = true;
+						sideBarMenuData[itemIndex].permissions.delete = true;
+						break;
+					}
+				}
+			} else if (permissionData.length === 0) { // If no application is given access to the user yet (except super admin)
+				MessageBox.information(this.oResourceBundle.getText("notAppPermitted"));
+			}
 
-		// 	this.byId("sideBarMenu").getModel().updateBindings(true);
-		// },
+			this.byId("sideBarMenu").getModel().updateBindings(true);
+		},
 		isAppVisible: function (oMenuItem) {
 			if (oMenuItem) {
 				var userRole = this.getOwnerComponent().getModel("loggedOnUserModel").getData().role;
@@ -1060,5 +958,6 @@ sap.ui.define([
 
 	});
 });
+
 
 

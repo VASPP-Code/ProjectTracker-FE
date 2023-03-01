@@ -11,13 +11,18 @@ sap.ui.define([
 	return Controller.extend("vaspp.Customer.controller.Master", {
 		onInit: function () {
 			
+			var that = this;
 			this.oRouter = this.getOwnerComponent().getRouter();
 			this.oRouter.getRoute("master").attachPatternMatched(function (oEvent) {
                 this.getView().byId("productsTable").removeSelections(true);
                 
              }, this);
 			this._bDescendingSort = false;
-
+			$.get("/deswork/api/customers?populate=*",function(response){
+				response = JSON.parse(response);
+				var oModel = new sap.ui.model.json.JSONModel(response.data);
+				that.getView().setModel(oModel, "mcustomer");
+			}) 
 			
 			
 		},
@@ -30,14 +35,19 @@ sap.ui.define([
 		},
 		//SEARCH THE CUSTOMER DETAILS USING ID
 		onSearch: function (oEvent) {
-			var oTableSearchState = [],
-				sQuery = oEvent.getParameter("query");
+			// var oTableSearchState = [],
+			// 	sQuery = oEvent.getParameter("query");
 
-			if (sQuery && sQuery.length > 0) {
-				oTableSearchState = [new Filter("customerName", FilterOperator.Contains, sQuery)];
-			}
+			// if (sQuery && sQuery.length > 0) {
+			// 	oTableSearchState = [new Filter("attributes.customer_information.data.attributes.customerInformation_name", FilterOperator.Contains, sQuery)];
+			// }
 
-			this.getView().byId("productsTable").getBinding("items").filter(oTableSearchState, "Application");
+			// this.getView().byId("productsTable").getBinding("items").filter(oTableSearchState, "Application");
+			$.get("/deswork/api/customers?filters[username][$eq]=John&populate=*",function(response){
+				response = JSON.parse(response);
+				var oModel = new sap.ui.model.json.JSONModel(response.data);
+				that.getView().setModel(oModel, "mcustomer");
+			})
 		},
 		//TO ADD NEW CUSTOMER 
 		onAddNewCustomer: function () {

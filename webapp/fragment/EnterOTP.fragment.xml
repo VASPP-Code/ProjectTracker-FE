@@ -27,8 +27,9 @@
 			</f:formContainers>
 		</f:Form>
 		<buttons>
-			<Button  visible="false" press="onSubmit" text="Submit"/>
-			<Button  press="onSend" text="Send OTP"/>
+			<Button  visible="false" id="onSub" press="onSubmit" text="Submit"/>
+			<Button id="onSend" press="onSend" text="Send OTP"/>
+			<Button  press="onOTPCancel" text="Cancel"/>
 		</buttons>
 	</Dialog>
 </core:FragmentDefinition>
